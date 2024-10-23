@@ -17,7 +17,6 @@ document.addEventListener("DOMContentLoaded", function () {
         // realiza uma chamada HTTP para o servidor (a rota definida)
         method: "POST",
         headers: {
-          
           // a requisição será em formato JSON
           "Content-Type": "application/json", // correção do formato
         },

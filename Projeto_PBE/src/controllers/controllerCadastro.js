@@ -15,18 +15,16 @@ module.exports = class controllerCadastro {
     } else if (!email.includes("@")) {
       return res.status(400).json({ error: "Email inválido. Deve conter @" });
     } else {
-      
-      const querycpf = `SELECT * FROM usuario WHERE cpf = '${cpf}'`
-      
+      const querycpf = `SELECT * FROM usuario WHERE cpf = '${cpf}'`;
+
       try {
         connect.query(querycpf, function (err, results) {
           if (err) {
             console.error(err);
-            return res.status(500).json({ error: "Error interno do servidor" }); 
-          }
-          else if (results.length > 0){
+            return res.status(500).json({ error: "Error interno do servidor" });
+          } else if (results.length > 0) {
             return res.status(400).json({ error: "CPF já cadastrado" });
-          } else{
+          } else {
             const query = `INSERT INTO usuario (cpf, senha, email, nome) VALUES('${cpf}',
             '${senha}',
             '${email}',
@@ -39,7 +37,9 @@ module.exports = class controllerCadastro {
                 if (err.code === "ER_DUP_ENTRY") {
                   return res
                     .status(400)
-                    .json({ error: "O email já está vinculado a outro usuário" });
+                    .json({
+                      error: "O email já está vinculado a outro usuário",
+                    });
                 } else {
                   return res
                     .status(500)
@@ -88,32 +88,34 @@ module.exports = class controllerCadastro {
     } else if (!email.includes("@")) {
       return res.status(400).json({ error: "Email inválido. Deve conter @" });
     } else {
-        const query = `SELECT * FROM usuario WHERE email = '${email}'`;
+      const query = `SELECT * FROM usuario WHERE email = '${email}'`;
 
-        try{
-            //Executando a query
-            connect.query(query, function (err, results){
-              if(err){
-                console.log(err);
-                return res.status(500).json({error: "Erro interno do Servidor"});
-              }
-              if(results.length === 0){
-                return res.status(404).json({error: "Usuário não encontrado"});
-              }
+      try {
+        //Executando a query
+        connect.query(query, function (err, results) {
+          if (err) {
+            console.log(err);
+            return res.status(500).json({ error: "Erro interno do Servidor" });
+          }
+          if (results.length === 0) {
+            return res.status(404).json({ error: "Usuário não encontrado" });
+          }
 
-              const usuario = results[0];
+          const usuario = results[0];
 
-              //Verifica senha
-              if(usuario.senha === senha){
-                return res.status(200).json({message: "Login realiazado com sucesso!"});
-              } else{
-                return res.status(401).json({error: "Senha incorreta"});
-              }
-            });
-        }catch(error){
-          console.error(error);
-          return res.status(500).json({error: "Erro Interno do Servidor"})
-        }
+          //Verifica senha
+          if (usuario.senha === senha) {
+            return res
+              .status(200)
+              .json({ message: "Login realiazado com sucesso!" });
+          } else {
+            return res.status(401).json({ error: "Senha incorreta" });
+          }
+        });
+      } catch (error) {
+        console.error(error);
+        return res.status(500).json({ error: "Erro Interno do Servidor" });
+      }
     }
   }
 
@@ -179,5 +181,3 @@ module.exports = class controllerCadastro {
     }
   }
 };
-
-
