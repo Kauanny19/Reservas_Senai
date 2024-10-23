@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SENAI - Login</title>
+    <link rel="icon" href="images.png" type="image/png" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <header></header>
+    <main>
+      <section>
+        <form id="formulario-login">
+          <div class="senai-logo">
+            <img src="Icone_senai.png" alt="SENAI Logo" />
+          </div>
+
+          <section class="login-form">
+            <!--Entrada do Email-->
+            <label for="email"></label>
+            <input type="text" id="email" placeholder="Email" required />
+
+            <!--Entrada da Senha-->
+            <label for="senha"></label>
+            <input type="password" id="senha" placeholder="Senha" required />
+
+            <div class="button">
+              <input type="submit" value="Entrar" />
+              <p class="register-link">
+                Não tem cadastro? <a href="cadastro.html">Cadastrar-se</a>
+              </p>
+            </div>
+          </section>
+        </form>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; ReservasDeSala - Desenvolvido por: Hyago, Kauanny e Gabriel</p>
+    </footer>
+    <script>
+      /* script como um arquivo 'js'*/
+      function mostrarMensagem() {
+        alert("Logado");
+      }
+    </script>
+    <script src="app.js"></script>
+  </body>
+</html>

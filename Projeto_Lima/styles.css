@@ -1,0 +1,128 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    background-color: #B92626;
+    padding: 20px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #FFBDBD;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    /*cobre 100% da tela do navegador*/
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.senai-logo img {
+    width: 300px; /* Ajuste este valor para aumentar ou diminuir o tamanho da largura */
+    height: 70px; /* Mantém a proporção da imagem */
+    margin-bottom: 40px;
+    border-radius: 10px;
+}
+
+#formulario-login {
+    background-color: #AE0000; 
+    border-radius: 10px;
+    width: 420px;
+    height: 480px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Alinha os itens ao centro */
+}
+
+.login-form input {
+    margin-bottom: 45px; 
+    width: 300px;
+    padding: 12px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+}
+
+
+#formulario-cadastro {
+    background-color: #AE0000; 
+    border-radius: 10px;
+    width: 420px;
+    height: 480px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#formulario-cadastro .senai-logo img {
+    margin-bottom: 20px;
+}
+
+.cadastro-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Alinha os itens ao centro */
+}
+
+.cadastro-form input {
+    margin-bottom: 25px; 
+    width: 300px;
+    padding: 12px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+}
+
+.button input{
+    width: 300px;
+    padding: 10px;
+    background-color: #FF2A2A;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    margin-bottom: 15px;
+}
+
+.register-link {
+    color: white;
+    font-size: 14px;
+    text-align: center;/* Centraliza o link */
+}
+
+.register-link a {
+    color: #fff;
+    text-decoration: underline;
+}
+
+footer {
+    background-color: #B92626;
+    color: white; /* Cor do texto do rodapé */
+    padding: 17px;
+    text-align: center; /*Alinha texto do rodapé ao centro*/
+    bottom: 0; /* Alinha o rodapé abaixo da página*/
+    position: absolute; /*Posiciona o rodapé de forma absoluta em relação ao body*/
+    width: 100%; /*define a largura do rodapé*/
+}
