@@ -4,14 +4,6 @@
   box-sizing: border-box;
 }
 
-header {
-  background-color: #b92626;
-  padding: 20px;
-  width: 100%;
-  position: fixed;
-  top: 0;
-}
-
 body {
   font-family: Arial, sans-serif;
   background-color: #ffbdbd;
@@ -22,10 +14,28 @@ body {
   /*cobre 100% da tela do navegador*/
 }
 
+header {
+  background-color: #b92626;
+  padding: 27px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+}
+
 main {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+footer {
+  background-color: #b92626;
+  color: white; /* Cor do texto do rodapé */
+  padding: 17px;
+  text-align: center; /*Alinha texto do rodapé ao centro*/
+  bottom: 0; /* Alinha o rodapé abaixo da página*/
+  position: absolute; /*Posiciona o rodapé de forma absoluta em relação ao body*/
+  width: 100%; /*define a largura do rodapé*/
 }
 
 .senai-logo img {
@@ -39,7 +49,7 @@ main {
   background-color: #ae0000;
   border-radius: 10px;
   width: 420px;
-  height: 480px;
+  height: 470px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -66,7 +76,7 @@ main {
   background-color: #ae0000;
   border-radius: 10px;
   width: 420px;
-  height: 480px;
+  height: 470px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -116,12 +126,3 @@ main {
   text-decoration: underline;
 }
 
-footer {
-  background-color: #b92626;
-  color: white; /* Cor do texto do rodapé */
-  padding: 17px;
-  text-align: center; /*Alinha texto do rodapé ao centro*/
-  bottom: 0; /* Alinha o rodapé abaixo da página*/
-  position: absolute; /*Posiciona o rodapé de forma absoluta em relação ao body*/
-  width: 100%; /*define a largura do rodapé*/
-}
