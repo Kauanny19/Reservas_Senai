@@ -34,7 +34,7 @@ footer {
   padding: 17px;
   text-align: center; /*Alinha texto do rodapé ao centro*/
   bottom: 0; /* Alinha o rodapé abaixo da página*/
-  position: absolute; /*Posiciona o rodapé de forma absoluta em relação ao body*/
+  position: fixed;
   width: 100%; /*define a largura do rodapé*/
 }
 
@@ -126,3 +126,18 @@ footer {
   text-decoration: underline;
 }
 
+/*Página Início*/
+#inicio{
+  padding: 10px;
+}
+
+.inicio-d img {
+  height: 45px; /* Ajuste este valor para aumentar ou diminuir o tamanho da largura */
+  border-radius: 5px;
+  margin-right: 3px;
+}
+
+.inicio-d{
+  display: flex;
+  justify-content: end;
+}

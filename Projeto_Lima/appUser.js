@@ -44,7 +44,7 @@ function createUser(event) {
       console.log(data.message);
       //reseta os campos do formulario apos o sucesso do cadastro
       document.getElementById("formulario-cadastro").reset();
-      window.location.href = "login.html";
+      window.location.href = "index.html";
     })
     .catch((error) => {
       // Tratamento de erro
