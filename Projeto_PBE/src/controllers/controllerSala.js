@@ -35,89 +35,89 @@ module.exports = class ControllerSala {
     }
   }
 
-//   static async getAllOrganizadores(req, res) {
-//     const query = `SELECT * FROM organizador`;
+  static async getAllSalas(req, res) {
+    const query = `SELECT * FROM sala`;
 
-//     try {
-//       connect.query(query, function (err, results) {
-//         if (err) {
-//           console.error(err);
-//           return res.status(500).json({ error: "Erro interno do Servidor" });
-//         }
+    try {
+      connect.query(query, function (err, results) {
+        if (err) {
+          console.error(err);
+          return res.status(500).json({ error: "Erro interno do Servidor" });
+        }
 
-//         return res
-//           .status(200)
-//           .json({ message: "Lista de organizadores", organizador: results });
-//       });
-//     } catch (error) {
-//       console.error("Erro ao executar a consulta:", error);
-//       return res.status(500).json({ error: "Erro interno do servidor" });
-//     }
-//   }
+        return res
+          .status(200)
+          .json({ message: "Lista de salas", sala: results });
+      });
+    } catch (error) {
+      console.error("Erro ao executar a consulta:", error);
+      return res.status(500).json({ error: "Erro interno do servidor" });
+    }
+  }
 
-//   static async updateOrganizador(req, res) {
-//     // Desestrutura e recupera os dados enviados via corpo da requisição
-//     const { id, nome, email, senha, telefone } = req.body;
+  static async updateSala(req, res) {
+    // Desestrutura e recupera os dados enviados via corpo da requisição
+    const { id_sala, nomesala, bloco, capacidade} = req.body;
 
-//     // Validar se todos os campos foram preenchidos
-//     if (!nome || !email || !senha || !telefone) {
-//       return res
-//         .status(400)
-//         .json({ error: "Todos os campos devem ser preenchidos" });
-//     }
-//     const query = `UPDATE organizador SET nome=?,email=?,senha=?,telefone=? WHERE id_organizador = ?`;
-//     const values = [nome, email, senha, telefone, id];
+    // Validar se todos os campos foram preenchidos
+    if (!nomesala || !bloco || !capacidade  ) {
+      return res
+        .status(400)
+        .json({ error: "Todos os campos devem ser preenchidos" });
+    }
+    const query = `UPDATE sala SET nomesala=?,bloco=?,capacidade=? WHERE id_sala = ?`;
+    const values = [nomesala, bloco, capacidade, id_sala];
 
-//     try{
-//       connect.query(query,values,function(err,results){
-//         if(err){
-//           if(err.code === "ER_DUP_ENTRY"){
-//             return res.status(400).json({error:"Email já cadastrado por outro organizador"});
-//           }else{
-//             console.error(err);
-//             return res.status(500).json({error:"Erro interno do servidor"});
-//           }
-//         }
-//         if(results.affectedRows === 0){
-//           return res.status(404).json({error:"Organizador não encontrado"});
-//         }
-//         return res.status(200).json({message:"Organizador atualizado com sucesso"});
+    try{
+      connect.query(query,values,function(err,results){
+        if(err){
+          if(err.code === "ER_DUP_ENTRY"){
+            return res.status(400).json({error:"Sala já cadastrada"});
+          }else{
+            console.error(err);
+            return res.status(500).json({error:"Erro interno do servidor"});
+          }
+        }
+        if(results.affectedRows === 0){
+          return res.status(404).json({error:"Sala não encontrada"});
+        }
+        return res.status(200).json({message:"Sala atualizada com sucesso"});
         
 
-//       })
+      })
       
-//   }
-//     catch(error){
-//       console.error("Erro ao executar consulta",error);
-//       return res.status(500).json({error: "Erro interno no servidor"});
+  }
+    catch(error){
+      console.error("Erro ao executar consulta",error);
+      return res.status(500).json({error: "Erro interno no servidor"});
 
-//     }
+    }
+  }
 
-//   }
-//   static async deleteOrganizador(req, res) {
-//     const organizadorId = req.params.id;
-//     const query = `DELETE FROM organizador WHERE id_organizador = ?`;
-//     const values = [organizadorId];
+  static async deleteSala(req, res) {
+    const salaId = req.params.id;
+    const query = `DELETE FROM sala WHERE id_sala = ?`;
+    const values = [salaId];
 
-//     try {
-//       connect.query(query, values, function (err, results) {
-//         if (err) {
-//           console.error(err);
-//           return res.status(500).json({ error: "Erro interno do servidor" });
-//         }
+    try {
+      connect.query(query, values, function (err, results) {
+        if (err) {
+          console.error(err);
+          return res.status(500).json({ error: "Erro interno do servidor" });
+        }
 
-//         if (results.affectedRows === 0) {
-//           return res.status(404).json({ error: "Organizador não encontrado" });
-//         }
+        if (results.affectedRows === 0) {
+          return res.status(404).json({ error: "Sala não encontrada" });
+        }
 
-//         return res
-//           .status(200)
-//           .json({ message: "Organizador exluido com sucesso" });
-//       });
-//     } catch (error) {
-//       console.error(error);
-//       return res.status(500).json
-//         ({error:"Erro interno do servidor"})
-//     }
-//   }
+        return res
+          .status(200)
+          .json({ message: "Sala exluida com sucesso" });
+      });
+    } catch (error) {
+      console.error(error);
+      return res.status(500).json
+        ({error:"Erro interno do servidor"})
+    }
+  }
 };
