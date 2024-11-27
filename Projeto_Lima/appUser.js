@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", function () {
           console.log("Usuário criado: ", data.user);
           //reseta os campos do formulario apos o sucesso do cadastro
           formularioCadastro.reset();
-          window.location.href = "login.html";
+          window.location.href = "index.html";
         })
         .catch((error) => {
           // Tratamento de erro
