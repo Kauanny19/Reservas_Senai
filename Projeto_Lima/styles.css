@@ -144,9 +144,11 @@ footer {
 
 /*Tabela*/
 .tabela{
-  margin-top: 2000px;
+  margin-top: 1980px;
   color: #ae0000;
+  text-align: center;
 }
+
 #salas-tabela {
   width: 100%;
   border-collapse: collapse; /* Remove espaços entre bordas */

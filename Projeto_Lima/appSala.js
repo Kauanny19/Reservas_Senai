@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", getSalasTable);
 
 function getSalasTable() {
-  fetch("http://10.89.240.78:5000/projeto_de_reserva/GETSalas",{
+  fetch("http://10.89.240.78:5000/projeto_de_reserva/sala",{
     method: "GET",
     headers: {
       "Content-Type": "application/json",
