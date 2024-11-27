@@ -117,7 +117,7 @@ module.exports = class ControllerSala {
     } catch (error) {
       console.error(error);
       return res.status(500).json
-        ({error:"Erro interno do servidor"})
+        ({error:"Erro interno do servidor"});
     }
   }
 };
