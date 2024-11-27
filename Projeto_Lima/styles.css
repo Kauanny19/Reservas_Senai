@@ -141,3 +141,35 @@ footer {
   display: flex;
   justify-content: end;
 }
+
+/*Tabela*/
+.tabela{
+  margin-top: 2000px;
+  color: #ae0000;
+}
+#salas-tabela {
+  width: 100%;
+  border-collapse: collapse; /* Remove espaços entre bordas */
+  margin-top: 10px; /* Espaçamento superior */
+  margin-bottom: 100px;
+  
+}
+
+th, td {
+  border: 1px solid #ae0000; /* Borda cinza clara */
+  padding: 15px; /* Espaçamento interno */
+  text-align: left; /* Alinhamento à esquerda */
+}
+
+th {
+  background-color: #ae0000;
+  color: white;
+}
+
+tr:hover {
+  background-color: #ddd; /* Cor de fundo ao passar o mouse */
+}
+tr{
+  color: black;
+  background-color: #fff;
+}

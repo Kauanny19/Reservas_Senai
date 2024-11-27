@@ -1,7 +1,7 @@
 const connect = require("../db/connect");
 module.exports = class ControllerSala {
   static async createSala(req, res) {
-    const { nomesala, bloco, capacidade} = req.body;
+    const { nomesala, bloco, capacidade, descricao} = req.body;
 
     if (!nomesala || !bloco || !capacidade) {
       //Verifica se todos os campos estão preenchidos
@@ -9,7 +9,7 @@ module.exports = class ControllerSala {
         .status(400)
         .json({ error: "Todos os campos devem ser preenchidos" });
     } else {
-      const query = `INSERT INTO sala (nomesala, bloco, capacidade) VALUES('${nomesala}','${bloco}','${capacidade}')`;
+      const query = `INSERT INTO sala (nomesala, bloco, capacidade, descricao) VALUES('${nomesala}','${bloco}','${capacidade}','${descricao}')`;
       try {
         connect.query(query, function (err) {
           if (err) {
@@ -57,16 +57,16 @@ module.exports = class ControllerSala {
 
   static async updateSala(req, res) {
     // Desestrutura e recupera os dados enviados via corpo da requisição
-    const { id_sala, nomesala, bloco, capacidade} = req.body;
+    const { id_sala, nomesala, bloco, capacidade, descricao} = req.body;
 
     // Validar se todos os campos foram preenchidos
-    if (!nomesala || !bloco || !capacidade  ) {
+    if (!nomesala || !bloco || !capacidade ||!descricao ) {
       return res
         .status(400)
         .json({ error: "Todos os campos devem ser preenchidos" });
     }
-    const query = `UPDATE sala SET nomesala=?,bloco=?,capacidade=? WHERE id_sala = ?`;
-    const values = [nomesala, bloco, capacidade, id_sala];
+    const query = `UPDATE sala SET nomesala=?,bloco=?,capacidade=?,descricao=? WHERE id_sala = ?`;
+    const values = [nomesala, bloco, capacidade, descricao, id_sala];
 
     try{
       connect.query(query,values,function(err,results){

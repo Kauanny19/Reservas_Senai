@@ -10,7 +10,7 @@ const corsOpitions = {
 
 //Aplicando o middleware CORS no app
 app.use(cors(corsOpitions));
-app.listen(5000); //Inicia servidor na porta 5000, neste caso a API sera acessivel em http://localhost:5000/
+app.listen(5000); 
 
 
-// http://localhost:5000/projeto_de_reserva/
+// http://10.89.240.78:5000/projeto_de_reserva/

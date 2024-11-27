@@ -121,16 +121,16 @@ module.exports = class controllerCadastro {
 
   static async updateUser(req, res) {
     // Desestrutura e recupera os dados enviados via corpo da requisição
-    const { cpf, email, senha, nome } = req.body;
+    const { cpf, email, senha, nome, id_usuario } = req.body;
 
     // Validar se todos os campos foram preenchidos
-    if (!cpf || !email || !senha || !nome) {
+    if (!cpf || !email || !senha || !nome || !id_usuario) {
       return res
         .status(400)
         .json({ error: "Todos os campos devem ser preenchidos" });
     }
-    const query = `UPDATE usuario SET nome=?,email=?,senha=? WHERE cpf = ?`;
-    const values = [nome, email, senha, cpf];
+    const query = `UPDATE usuario SET nome=?,email=?,senha=?, cpf=? WHERE id_usuario = ?`;
+    const values = [nome, email, senha, cpf, id_usuario];
 
     try {
       connect.query(query, values, function (err, results) {
