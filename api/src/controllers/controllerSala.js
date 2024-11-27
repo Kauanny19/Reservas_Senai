@@ -3,7 +3,7 @@ module.exports = class ControllerSala {
   static async createSala(req, res) {
     const { nomesala, bloco, capacidade, descricao} = req.body;
 
-    if (!nomesala || !bloco || !capacidade) {
+    if (!nomesala || !bloco || !capacidade || !descricao) {
       //Verifica se todos os campos estão preenchidos
       return res
         .status(400)
