@@ -8,10 +8,7 @@ body {
   font-family: Arial, sans-serif;
   background-color: #ffbdbd;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  /*cobre 100% da tela do navegador*/
+  height: 100vh; /*cobre 100% da tela do navegador*/
 }
 
 header {
@@ -23,6 +20,7 @@ header {
 }
 
 main {
+  flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -127,37 +125,76 @@ footer {
 }
 
 /*Página Início*/
-#inicio{
+.pagina-inicial main {
+  padding-top: 27px; /* Adiciona espaço suficiente para o header */
+}
+
+#inicio {
   padding: 10px;
 }
 
-.inicio-d img {
+img {
   height: 45px; /* Ajuste este valor para aumentar ou diminuir o tamanho da largura */
   border-radius: 5px;
   margin-right: 3px;
 }
 
-.inicio-d{
+#inicio div {
   display: flex;
   justify-content: end;
 }
 
-/*Tabela*/
-.tabela{
-  margin-top: 1980px;
-  color: #ae0000;
-  text-align: center;
+/*Menu*/
+#menu {
+  display: flex;
+  width: 15%;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  background: #b92626;
+  position: fixed;
+  top: 0;
+  left: 0;
+  flex-direction: column;
 }
 
-#salas-tabela {
-  width: 100%;
+#menu ul li {
+  margin: 0;
+  padding: 5px;
+  padding-top: 27px;
+  border-bottom: 1px solid #ccc;
+  text-align: left;
+  list-style-type: none;
+  height: 66px;
+}
+
+#menu a {
+  color: white;
+  text-decoration: none;
+  padding: 10px;
+}
+
+/*Tabela*/
+.conteudo {
+  margin-left: 15%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 85%;
+  padding: 5% 0px 5% 0px;
+  color: #ae0000;
+  margin-top: auto;
+}
+
+.salas-tabela {
+  width: auto;
   border-collapse: collapse; /* Remove espaços entre bordas */
   margin-top: 10px; /* Espaçamento superior */
-  margin-bottom: 100px;
-  
+  justify-content: center;
 }
 
-th, td {
+th,
+td {
   border: 1px solid #ae0000; /* Borda cinza clara */
   padding: 15px; /* Espaçamento interno */
   text-align: left; /* Alinhamento à esquerda */
@@ -171,7 +208,8 @@ th {
 tr:hover {
   background-color: #ddd; /* Cor de fundo ao passar o mouse */
 }
-tr{
+
+tr {
   color: black;
   background-color: #fff;
 }

@@ -13,11 +13,10 @@ document.addEventListener("DOMContentLoaded", function () {
       const senha = document.getElementById("senha").value;
 
       // requisição http para o endpoint de cadastro de usuário
-      fetch("http://10.89.240.78:5000/projeto_de_reserva/cadastro", {
+      fetch("http://10.89.240.73:5000/projeto_de_reserva/cadastro", {
         // realiza uma chamada HTTP para o servidor (a rota definida)
         method: "POST",
         headers: {
-          
           // a requisição será em formato JSON
           "Content-Type": "application/json", // correção do formato
         },
@@ -63,7 +62,7 @@ document.addEventListener("DOMContentLoaded", function () {
       const email = document.getElementById("email").value; // capturar os valores dos campos do formulário pelo id
       const senha = document.getElementById("senha").value;
 
-      fetch("http://10.89.240.78:5000/projeto_de_reserva/login", {
+      fetch("http://10.89.240.73:5000/projeto_de_reserva/login", {
         // realiza uma chamada HTTP para o servidor (a rota definida)
         method: "POST",
         headers: {
