@@ -5,6 +5,7 @@ function getSalasTable() {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
+
     },
   })
     .then((response) => {
@@ -19,12 +20,12 @@ function getSalasTable() {
       const salaList = document.getElementById("salas-list-tabela");
       salaList.innerHTML = ""; //Limpa a lista antes de adicionar novos itens
 
-      //Verifica se há usuários retornados e os adiciona à tabela
+      //Verifica se há salas retornadas e adiciona à tabela
       data.sala.forEach((sala) => {
         //Cria uma nova linha
         const tr = document.createElement("tr");
 
-        //Cria células para nome, cpf e email
+        //Cria células para nomesala, bloco, descrição e capacidade
         const tdNome = document.createElement("td");
         tdNome.textContent = sala.nomesala;
         tr.appendChild(tdNome);
